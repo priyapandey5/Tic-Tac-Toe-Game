@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-color: #F8E8EE;
+}
+
+.background {
+    background-color: #F8E8EE;
+    height: 100vh;
+    padding-top: 1px;
+}
+
+.title {
+    color: #662549;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 5%;
+    text-decoration: underline;
+}
+
+.display {
+    color: rgb(11, 10, 10);
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background-color:#F8E8EE; 
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    padding: 25px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    max-width: 300px;
+    perspective: 800px;
+    box-shadow: 0 30px 50px rgb(104, 73, 104);
+}
+
+.tile {
+    border: 2px solid rgb(65, 8, 65);
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color:linear-gradient(225deg,#89ff00,);
+}
+
+.tile:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(106, 10, 125, 0.858)
+   
+}
+
+.playerX {
+    color: rgb(139, 10, 141);
+}
+
+.playerO {
+    color: rgb(3, 34, 87);
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.controls button {
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.restart {
+    background-color: #498AFB;
+}
+
+#reset {
+    background-color: rgb(233, 110, 239);
+}
+
+
+#reset:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgb(82, 8, 86);
+  }
+  
+  #reset:hover {
+    color: rgb(13, 13, 13);
+    box-shadow: 0 0 5px rgb(69, 52, 70);
+    text-shadow: 0 0 5px rgb(78, 75, 78);
+  }
