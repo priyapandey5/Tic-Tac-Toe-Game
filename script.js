@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const tiles = Array.from(document.querySelectorAll('.tile'));
+    const blocks = Array.from(document.querySelectorAll('.block'));
     const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
@@ -11,14 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const PLAYERX_WON = 'PLAYERX_WON';
     const PLAYERO_WON = 'PLAYERO_WON';
     const TIE = 'TIE';
-
-
-    /*
-        Indexes within the board
-        [0] [1] [2]
-        [3] [4] [5]
-        [6] [7] [8]
-    */
 
     const winningConditions = [
         [0, 1, 2],
@@ -71,8 +63,8 @@ window.addEventListener('DOMContentLoaded', () => {
         announcer.classList.remove('hide');
     };
 
-    const isValidAction = (tile) => {
-        if (tile.innerText === 'X' || tile.innerText === 'O'){
+    const isValidAction = (block) => {
+        if (block.innerText === 'X' || block.innerText === 'O'){
             return false;
         }
 
@@ -90,10 +82,10 @@ window.addEventListener('DOMContentLoaded', () => {
         playerDisplay.classList.add(`player${currentPlayer}`);
     }
 
-    const userAction = (tile, index) => {
-        if(isValidAction(tile) && isGameActive) {
-            tile.innerText = currentPlayer;
-            tile.classList.add(`player${currentPlayer}`);
+    const userAction = (block, index) => {
+        if(isValidAction(block) && isGameActive) {
+            block.innerText = currentPlayer;
+            block.classList.add(`player${currentPlayer}`);
             updateBoard(index);
             handleResultValidation();
             changePlayer();
@@ -109,15 +101,15 @@ window.addEventListener('DOMContentLoaded', () => {
             changePlayer();
         }
 
-        tiles.forEach(tile => {
-            tile.innerText = '';
-            tile.classList.remove('playerX');
-            tile.classList.remove('playerO');
+        blocks.forEach(block => {
+            block.innerText = '';
+            block.classList.remove('playerX');
+            block.classList.remove('playerO');
         });
     }
 
-    tiles.forEach( (tile, index) => {
-        tile.addEventListener('click', () => userAction(tile, index));
+    blocks.forEach( (block, index) => {
+        block.addEventListener('click', () => userAction(block, index));
     });
 
     resetButton.addEventListener('click', resetBoard);
