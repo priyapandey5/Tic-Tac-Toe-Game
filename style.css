@@ -43,7 +43,7 @@
     box-shadow: 0 30px 50px rgb(104, 73, 104);
 }
 
-.tile {
+.block {
     border: 2px solid rgb(65, 8, 65);
     min-width: 100px;
     min-height: 100px;
@@ -57,7 +57,7 @@
     background-color:linear-gradient(225deg,#89ff00,);
 }
 
-.tile:hover {
+.block:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(106, 10, 125, 0.858)
    
